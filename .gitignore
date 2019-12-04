@@ -3,3 +3,4 @@ interview/imbalance.xlsx
 interview/np_conv/*
 learn_cmake/build/*
 learn_cmake/test/*
+learn_pycpp/modify_order_by_weight.pyd
