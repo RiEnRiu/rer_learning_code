@@ -1,7 +1,7 @@
-
 interview/imbalance.xlsx
-interview/np_conv/*
 learn_cmake/build/*
 learn_cmake/test/*
 learn_pycpp/modify_order_by_weight.pyd
 ubuntu/*
+interview/np_conv/venv/*
+interview/np_conv/params/*
