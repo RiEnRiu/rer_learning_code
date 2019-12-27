@@ -26,6 +26,7 @@
     <Compile Include="learn_pycpp_2.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="parallel_test.py" />
     <Compile Include="py_modify_order_by_weight.py">
       <SubType>Code</SubType>
     </Compile>
@@ -35,6 +36,8 @@
     <Content Include="cpp_nms.h" />
     <Content Include="modify_order_by_weight.cpp" />
     <Content Include="modify_order_by_weight.h" />
+    <Content Include="parallel_not_work.cpp" />
+    <Content Include="parallel_work.cpp" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

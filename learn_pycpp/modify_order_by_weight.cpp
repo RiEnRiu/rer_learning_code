@@ -33,6 +33,7 @@ bp::object modify_order(
         goods_to_id[cpp_goods] = cpp_id;
         cpp_goods_weight[cpp_id] = cpp_weight;
     }
+
     //cout << "id_to_goods" << endl;
     //for (auto iter = id_to_goods.begin(); iter!=id_to_goods.end(); ++iter)
     //{
