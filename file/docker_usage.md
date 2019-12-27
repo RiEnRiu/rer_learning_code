@@ -83,7 +83,7 @@ docker images
 ### 【3】. 删除镜像
 ```
 docker rmi $IMAGE_ID
-[$IMAGE_ID] 通过【3】可以查得到
+[$IMAGE_ID] 通过【2】可以查得到
 ```
 
 ### 【4】. 查容器
@@ -95,7 +95,7 @@ docker container ps -a
 ```
 docker cp $PATH_TO_COPY $CONTAINER_ID:$CONTAINER_PATH
 [$PATH_TO_COPY] 宿主机器存放文件的路径（被复制文件）
-[$CONTAINER_ID] 某运行中的容器id，通过【5】可以查得到
+[$CONTAINER_ID] 某运行中的容器id，通过【4】可以查得到
 [$CONTAINER_PATH] 容器内的具体地址（要复制到哪里）
 ```
 
@@ -116,11 +116,11 @@ docker run --privileged true -p 60101:60101 --restart always -v /home/lee/DRICSe
 ```
 docker save -o $MY_IMAGE_PACK_NAME.tar $IMAGE_NAME:$IMAGE_TAG
 [$MY_IMAGE_PACK_NAME.tar] 输出的镜像包的路径（含文件名称）
-[$IMAGE_NAME] 通过【3】查得到的镜像名称。docker-hub云端先通过【7】运行一次，本地就会有记录。
+[$IMAGE_NAME] 通过【4】查得到的镜像名称。docker-hub云端先通过【6】运行一次，本地就会有记录。
 [$IMAGE_TAG] 这个镜像的具体版本，如果缺省的话，会把本地所有的同名镜像打包成一个包。
 ```
 
-### [8]. 加载镜像保存为文件
+### [8]. 加载镜像文件
 ```
 docker load -i $MY_IMAGE_PACK_NAME.tar
 [$MY_IMAGE_PACK_NAME.tar] 镜像包的路径（含文件名称）
@@ -159,7 +159,7 @@ RUN cd /home/zjsmart/Downloads \
     && ./b2 install \
     && cd /usr/local/lib \
     && ln -s libboost_python35.a libboost_python3.a \
-    && ln -s libboost_python35.so libbost_python3.so \
+    && ln -s libboost_python35.so libbost_python3.so
 
 [FROM] 以哪个镜像为蓝本构建
 [RUN] 相当于在bash中执行语句，启动gedit，vim，source等交互式的语句在制作镜像的时候是不管用的。
