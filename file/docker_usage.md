@@ -1,4 +1,5 @@
-## 安装docker（找docker官网和nvidia-docker的github）
+
+## 安装docker（参考docker官网和nvidia-docker的github）
 
 ### 【0】. 卸载旧版本.
 ```
@@ -62,6 +63,12 @@ sudo apt-get install -y nvidia-container-toolkit
 sudo systemctl restart docker
 ```
 
+### 【9】. 重启电脑让【6】加入用户组生效
+```
+sudo reboot
+```
+
+
 
 ## docker命令
 
@@ -84,6 +91,8 @@ docker images
 ```
 docker rmi $IMAGE_ID
 [$IMAGE_ID] 通过【2】可以查得到
+
+docker image prune           # rm all images <none>
 ```
 
 ### 【4】. 查容器
@@ -141,6 +150,8 @@ docker container stop $IMAGE_ID
 ### [11]. 删除容器
 ```
 docker container rm $IMAGE_ID
+
+docker container prune       # rm all containers exited
 ```
 
 
@@ -172,10 +183,10 @@ RUN cd /home/zjsmart/Downloads \
 
 ## 部署步骤
 ```
-1. 将修改好的代码放入到对应的源码文件夹；
+1. 将修改好的代码/程序放入到对应的源码文件夹；
 2. 看是否需要修改Dockerfile，如何修改请进入相关应用的文件夹查看说明；
 3. 生成镜像：（本地生成后导出tar发送到服务器，或者直接在服务器生成）
-4. 运行容器；
+4. 线上运行容器；
 ```
 
 ## 云镜像网站（找到名称之后，直接docker run就自动下载了）
