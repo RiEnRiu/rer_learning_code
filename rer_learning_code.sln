@@ -17,6 +17,8 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "test_module", "test_module\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_leecode", "test_leecode\test_leecode.vcxproj", "{E058A32B-A78C-4327-B58F-852A6FEF8C61}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "learn_quaternion", "learn_quaternion\learn_quaternion.pyproj", "{6B491E73-87AC-435D-854B-3EC3C10D026E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,12 @@ Global
 		{E058A32B-A78C-4327-B58F-852A6FEF8C61}.Release|x64.Build.0 = Release|x64
 		{E058A32B-A78C-4327-B58F-852A6FEF8C61}.Release|x86.ActiveCfg = Release|Win32
 		{E058A32B-A78C-4327-B58F-852A6FEF8C61}.Release|x86.Build.0 = Release|Win32
+		{6B491E73-87AC-435D-854B-3EC3C10D026E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B491E73-87AC-435D-854B-3EC3C10D026E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6B491E73-87AC-435D-854B-3EC3C10D026E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6B491E73-87AC-435D-854B-3EC3C10D026E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B491E73-87AC-435D-854B-3EC3C10D026E}.Release|x64.ActiveCfg = Release|Any CPU
+		{6B491E73-87AC-435D-854B-3EC3C10D026E}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
