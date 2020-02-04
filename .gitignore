@@ -7,4 +7,5 @@ interview/np_conv/venv/*
 interview/np_conv/params/*
 rer_learning_code.VC.db
 test_leecode/object/*
+test_leecode/bin/*
 .vs/*
