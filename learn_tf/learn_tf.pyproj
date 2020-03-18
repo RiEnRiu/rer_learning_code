@@ -36,16 +36,26 @@
     <Compile Include="p020_linearRegression.py" />
     <Compile Include="p023_HessianMatrix.py" />
     <Compile Include="p025_determinant.py" />
-    <Compile Include="p026_adam_optimizer.py" />
-    <Compile Include="p031_cost_function.py">
+    <Compile Include="p026_adamOptimizer.py" />
+    <Compile Include="p031_costFunction.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="p035_BPNetworkForIRIS.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="p061_optimizerForlinearRegression.py" />
     <Compile Include="p076_conv2d.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="p080_convDogsCats\cnn_dogs_cats.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="p080_convDogsCats\dataset.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="p080_convDogsCats\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -129,4 +129,4 @@ def run(h_size, stddev, sgd_steps):
 
 sgd_steps = [0.01, 0.02, 0.03]
 run(128,0.1,sgd_steps)
-sess.close()     
+sess.close()

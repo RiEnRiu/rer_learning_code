@@ -137,9 +137,6 @@ def test_train_mnist():
             print(res)
     
 
-
-
-
 #test_whether_rotate_kernel()
 #print('')
 #test_strides_and_padding()

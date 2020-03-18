@@ -9,3 +9,7 @@ rer_learning_code.VC.db
 test_leecode/object/*
 test_leecode/bin/*
 .vs/*
+learn_tf/dogs_vs_cats/*
+learn_tf/p080_convDogsCats/dogs_vs_cats.tar.gz
+*.pyc
+test_leecode/test_leecode.vcxproj.user
