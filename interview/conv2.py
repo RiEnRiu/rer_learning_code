@@ -1,5 +1,7 @@
 import numpy as np
 
+
+
 def conv2(image_c1,ker,size_type='full'):
     img = np.array(image_c1,np.float32)
     K = np.array(ker,np.float32)

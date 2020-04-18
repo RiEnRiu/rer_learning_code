@@ -4,12 +4,13 @@
 #include<string>
 #include<vector>
 #include<unordered_map>
-#include<algorithm>
 #include<unordered_set>
+#include<stack>
+#include<algorithm>
 #include<numeric>
-#include<math.h>
 #include<exception>
 #include<bitset>
+#include<math.h>
 using namespace std;
 
 
@@ -67,6 +68,7 @@ void print_vector(vector<T> a)
 	cout << endl;
 	return;
 }
+
 //
 //namespace std 
 //{
@@ -107,85 +109,100 @@ void print_vector(vector<T> a)
 //	};
 //};
 
+class Node 
+{
+public:
+    int val;
+    Node* left;
+    Node* right;
+    Node* next;
 
+    Node() : val(0), left(NULL), right(NULL), next(NULL) {}
 
+    Node(int _val) : val(_val), left(NULL), right(NULL), next(NULL) {}
+
+    Node(int _val, Node* _left, Node* _right, Node* _next)
+        : val(_val), left(_left), right(_right), next(_next) {}
+};
 
 int main()
 {
-
-	//unordered_map<vector<int>, int, hash<vector<int>>, equal_to<vector<int>>> aaa;
-	//aaa[{1}] = 1;
-	//aaa[1] = 1;
-
-    class Solution 
+    class Solution
     {
     private:
-        void backtrack(string &s, int left, int right, int n,vector<string> &ans)
+        void infect(const vector<vector<char>>& grid,int i, int j, int m, int n, vector<vector<bool>> &flag)
         {
-            if (left == n)
+            flag[i][j] = true;
+            if (i > 0)
             {
-                string t = s;
-                for (int i = right; i < n; ++i)
-                {
-                    t.push_back(')');
-                }
-                ans.push_back(t);
-                return;
+                if (flag[i - 1][j] == false && grid[i - 1][j] == '1') { infect(grid, i - 1, j, m, n, flag); }
+                else { flag[i - 1][j] = true; }
             }
-            else if(left>right)
-            {
-                s.push_back('(');
-                backtrack(s, left + 1, right, n, ans);
-                s.pop_back();
-                if (right < n)
-                {
-                    s.push_back(')');
-                    backtrack(s, left, right + 1, n, ans);
-                    s.pop_back();
-                }
+            if (i < m - 1)
+            { 
+                if (flag[i + 1][j] == false && grid[i + 1][j] == '1') { infect(grid, i + 1, j, m, n, flag); }
+                else { flag[i + 1][j] = true; }
             }
-            else //if(left==right)
+            if (j > 0)
             {
-                s.push_back('(');
-                backtrack(s, left + 1, right, n, ans);
-                s.pop_back();
+                if (flag[i][j - 1] == false && grid[i][j - 1] == '1') { infect(grid, i, j - 1, m, n, flag); }
+                else { flag[i][j - 1] = true; }
+            }
+            if (j < n - 1)
+            {
+                if (flag[i][j + 1] == false && grid[i][j + 1] == '1') { infect(grid, i, j + 1, m, n, flag); }
+                else { flag[i][j + 1] = true; }
             }
             return;
         }
+
     public:
-        vector<string> generateParenthesis(int n)
+        int numIslands(vector<vector<char>>& grid) 
         {
-            if (n == 0) { return vector<string>(); }
-            vector<string> ans;
-            string s("(");
-            backtrack(s, 1, 0, n, ans);
-            return ans;
+            if (grid.size() == 0) { return 0; }
+            int m = grid.size();
+            int n = grid[0].size();
+            int count = 0;
+            vector<vector<bool>> flag(m, vector<bool>(n, false));
+            for (int i = 0; i < m; ++i)
+            {
+                for (int j = 0; j <n; ++j)
+                {
+                    if (flag[i][j] == false)
+                    {
+                        if (grid[i][j] == '1')
+                        {
+                            ++count;
+                            infect(grid, i, j, m, n, flag);
+                        }
+                        else { flag[i][j] = true; }
+                    }
+                }
+            }
+            return count;
         }
     };
 
-
-	//vector<vector<char>> matrix(6);
-	//matrix[0] = vector<char>({ 'O','O','O','O','X','X' });
-	//matrix[1] = vector<char>({ 'O','O','O','O','O','O' });
-	//matrix[2] = vector<char>({ 'O','X','O','X','O','O' });
-	//matrix[3] = vector<char>({ 'O','X','O','O','X','O' });
-	//matrix[4] = vector<char>({ 'O','X','O','X','O','O' });
+	vector<vector<char>> matrix(3);
+    matrix[0] = vector<char>({ '1','1','1' });
+    matrix[1] = vector<char>({ '0','1','0' });
+    matrix[2] = vector<char>({ '1','1','1' });
+    //matrix[3] = vector<char>({ '0','0','0','1','1' });
+	//matrix[4] = vector<char>({ 1,1,1,1,0 });
 	//matrix[5] = vector<char>({ 'O','X','O','O','O','O' });
 	//matrix[6] = vector<char>({ 'O', 'O', 'O', 'X', 'O', 'O', 'O', 'O', 'O' });
 	//matrix[7] = vector<char>({ 'O', 'O', 'O', 'X', 'O', 'O', 'O', 'O', 'O' });
 	//matrix[8] = vector<char>({ 'O', 'O', 'O', 'O', 'O', 'X', 'X', 'O', 'O' });
 
-
 	//Solution().solve(matrix);
 
-
-    vector<int> arr1 = { 1,2,4,3 };
-	vector<int> arr2 = { 2,5,6 };
+    vector<int> arr1 = {0,0,1,0,0,0,1,1};
+	//vector<int> arr2 = { 3,2,1,0,4 };
 	////vector<string> ans;
-	//Solution().maxArea(arr1);
-    auto ans = Solution().generateParenthesis(3);
-	//cout << ans << endl;
-	print_vector(ans);
+	//Solution().numDecodings("12");
+    auto ans = Solution().numIslands(matrix);
+	cout << ans << endl;
+	//print_vector(ans);
 
 
     //cout << Solution().poorPigs(1000,4,15) << endl;
